@@ -6,7 +6,12 @@ public class Managers : MonoBehaviour
 {
     static Managers s_instance;  //유일성이 보장된다.
     // 유일한 매니저를 갖고온다. // 프로퍼티 // 읽기 전용
-    public static Managers Instance { get { Init(); return s_instance; } }
+    static Managers Instance { get { Init(); return s_instance; } }
+
+
+    ResourceManager _resource = new ResourceManager();
+
+    public static ResourceManager Resource { get { return Instance._resource; } }
 
     // Start is called before the first frame update
     void Start()
